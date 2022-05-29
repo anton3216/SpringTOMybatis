@@ -9,11 +9,12 @@ http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
     <context:component-scan base-package="org.qingqiao.controller"/>
+    <!-- 处理器映射器及处理器适配器，前者帮助我们处理@RequestMapping注解的。并将controller类的名字映射为请求url。后者帮助我们处理请求， -->
     <mvc:annotation-driven/>
     <!--这个是处理器映射器，这种方式，请求地址其实就是一个 Bean 的名字，然后根据这个 bean 的名字查找对应的处理器-->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" id="handlerMapping"/>
-
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" id="handlerAdapter"/>
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" id="handlerMapping"/>-->
+    <!-- 处理器适配器 -->
+    <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" id="handlerAdapter"/>-->
 
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">

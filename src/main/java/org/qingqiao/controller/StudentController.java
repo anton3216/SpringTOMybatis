@@ -25,7 +25,8 @@ public class StudentController {
     private StudentService ss;
 
     @RequestMapping("queryAll")
-    public String queryAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String queryAll(HttpServletRequest req, HttpServletResponse resp,String name) throws ServletException, IOException {
+        System.out.println(name);
         List<Student> students = ss.queryAll();
         req.setAttribute("list",students);
         return "list";
